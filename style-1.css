@@ -55,8 +55,18 @@ input, textarea { padding: 12px; border: 1px solid #333; background: #111; color
     width: 100%;
     transition: 0.3s;
 }
-.btn-enviar:hover { background-color: #888; color: #fff; }
+.btn-enviar:pairar { fundo-cor: #888; }
 
+img {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+/* RODAPÉ SIMPLIFICADO */
+rodapé {
+...
 /* RODAPÉ SIMPLIFICADO */
 footer {
     text-align: center;

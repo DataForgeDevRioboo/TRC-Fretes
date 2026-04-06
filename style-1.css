@@ -1,0 +1,75 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Arial', sans-serif; background-color: #ffffff; color: #000; line-height: 1.6; }
+
+/* HEADER */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 1.5rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 span { color: #888; font-weight: normal; margin-left: 2px; }
+
+/* MENU LADO A LADO */
+.menu-horizontal { display: flex; list-style: none; }
+.menu-horizontal li { margin-left: 25px; }
+.menu-horizontal a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+.menu-horizontal a:hover { color: #888; }
+
+main { max-width: 850px; margin: 2rem auto; padding: 0 20px; }
+
+section { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #eee; }
+
+h2 { border-left: 5px solid #000; padding-left: 15px; margin-bottom: 1.5rem; text-transform: uppercase; }
+
+/* IMAGEM COM EFEITO */
+.moldura-imagem { width: 100%; margin-top: 1.5rem; overflow: hidden; border: 1px solid #ddd; }
+.foto-efeito {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+    cursor: pointer;
+}
+.foto-efeito:hover { filter: grayscale(0%); }
+
+/* FORMULÁRIO */
+#orcamento { background-color: #000; color: #fff; padding: 40px; border-radius: 4px; }
+#orcamento h2 { color: #fff; border-left-color: #fff; }
+.campo-grupo { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+label { font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; color: #ccc; }
+input, textarea { padding: 12px; border: 1px solid #333; background: #111; color: #fff; }
+
+.btn-enviar {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+.btn-enviar:hover { background-color: #888; color: #fff; }
+
+/* RODAPÉ SIMPLIFICADO */
+footer {
+    text-align: center;
+    padding: 3rem;
+    color: #999;
+    font-size: 0.8rem;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
+}
+
+/* AJUSTE PARA CELULAR */
+@media (max-width: 600px) {
+    header { flex-direction: column; text-align: center; }
+    .menu-horizontal { margin-top: 1.5rem; }
+    .menu-horizontal li { margin: 0 10px; }
+}

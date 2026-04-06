@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRC Fretes - Profissionalismo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>TRC<span>Fretes</span></h1>
+        </div>
+        <nav>
+            <ul class="menu-horizontal">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#orcamento">Orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <article>
+                <h2>Transportes e Mudanças</h2>
+                <p>A TRC Fretes atua com foco na agilidade e no cuidado com o seu patrimônio. Atendimento personalizado para fretes e cargas em geral.</p>
+                
+                <div class="moldura-imagem">
+                    <img src="saveiro.png" alt="Saveiro TRC Fretes" class="foto-efeito">
+                </div>
+            </article>
+        </section>
+
+        <section id="servicos">
+            <h2>Nossos Serviços</h2>
+            <div class="lista-servicos">
+                <ul>
+                    <li><strong>Mudanças:</strong> Residenciais e comerciais com segurança.</li>
+                    <li><strong>Fretes Expressos:</strong> Entregas rápidas na região.</li>
+                    <li><strong>Cargas:</strong> Soluções eficientes para mercadorias.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="orcamento">
+            <h2>Orçamento via WhatsApp</h2>
+            <p>Preencha os dados e receba sua cotação na hora.</p>
+            <form id="formFrete">
+                <div class="campo-grupo">
+                    <label>Seu Nome:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="campo-grupo">
+                    <label>Local de Retirada:</label>
+                    <input type="text" id="origem" placeholder="Bairro / Cidade" required>
+                </div>
+                <div class="campo-grupo">
+                    <label>Local de Entrega:</label>
+                    <input type="text" id="destino" placeholder="Bairro / Cidade" required>
+                </div>
+                <div class="campo-grupo">
+                    <label>O que levar?</label>
+                    <textarea id="descricao" rows="3" placeholder="Ex: Sofá e 5 caixas"></textarea>
+                </div>
+                <button type="button" onclick="enviarWhatsApp()" class="btn-enviar">
+                    SOLICITAR FRETE AGORA
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TRC Fretes - Profissionalismo e Pontualidade.</p>
+    </footer>
+
+    <script>
+        function enviarWhatsApp() {
+            const meuNumero = "5521994460203"; // Substitua pelo seu número real
+            const nome = document.getElementById('nome').value;
+            const origem = document.getElementById('origem').value;
+            const destino = document.getElementById('destino').value;
+            const descricao = document.getElementById('descricao').value;
+
+            if(!nome || !origem || !destino) {
+                alert("Por favor, preencha o Nome, Origem e Destino.");
+                return;
+            }
+
+            const texto = `*TRC FRETES*\n\n*Cliente:* ${nome}\n📍 *Origem:* ${origem}\n🏁 *Entrega:* ${destino}\n📦 *Carga:* ${descricao}`;
+            window.open(`https://api.whatsapp.com/send?phone=${meuNumero}&text=${encodeURIComponent(texto)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
